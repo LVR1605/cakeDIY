@@ -30,6 +30,18 @@
                         <fieldset>
                             <legend class="sr-only">Cake Shape</legend>
                             <div id="cakeShapeOptions">
+                                <?php
+                                // Arrays for cake options
+                                $cakeShapes = ["Heart shape", "Rectangle shape", "Square shape", "Round shape"];
+
+                                // Generate radio options for Cake Shape using PHP
+                                foreach ($cakeShapes as $option) {
+                                    echo '<label class="block my-2">';
+                                    echo '<input type="radio" class="form-radio" name="cakeShapeOptions" value="' . $option . '">';
+                                    echo '<span class="ml-2 text-xs sm:text-sm">' . $option . '</span>';
+                                    echo '</label>';
+                                }
+                                ?>
                             </div>
                         </fieldset>
                     </td>
@@ -37,6 +49,18 @@
                         <fieldset>
                             <legend class="sr-only">Cake Flavor</legend>
                             <div id="cakeFlavorOptions">
+                                <?php
+                                // Arrays for cake options
+                                $cakeFlavors = ["Chocolate", "Vanilla", "Lemon", "Cheesecake"];
+
+                                // Generate radio options for Cake Flavor using PHP
+                                foreach ($cakeFlavors as $option) {
+                                    echo '<label class="block my-2">';
+                                    echo '<input type="radio" class="form-radio" name="cakeFlavorOptions" value="' . $option . '">';
+                                    echo '<span class="ml-2 text-xs sm:text-sm">' . $option . '</span>';
+                                    echo '</label>';
+                                }
+                                ?>
                             </div>
                         </fieldset>
                     </td>
@@ -44,6 +68,18 @@
                         <fieldset>
                             <legend class="sr-only">Cake Toppings</legend>
                             <div id="cakeToppingsOptions">
+                                <?php
+                                // Arrays for cake options
+                                $cakeToppings = ["Cookies", "Spun-Sugar Flowers", "Mini Chocolate Candies", "Marshmallows"];
+
+                                // Generate radio options for Cake Toppings using PHP
+                                foreach ($cakeToppings as $option) {
+                                    echo '<label class="block my-2">';
+                                    echo '<input type="radio" class="form-radio" name="cakeToppingsOptions" value="' . $option . '">';
+                                    echo '<span class="ml-2 text-xs sm:text-sm">' . $option . '</span>';
+                                    echo '</label>';
+                                }
+                                ?>
                             </div>
                         </fieldset>
                     </td>
@@ -53,41 +89,5 @@
     </div>
 </div>
 
-<script>
-    // Arrays for cake options
-    const cakeShapes = ["Heart shape", "Rectangle shape", "Square shape", "Round shape"];
-    const cakeFlavors = ["Chocolate", "Vanilla", "Lemon", "Cheesecake"];
-    const cakeToppings = ["Cookies", "Spun-Sugar Flowers", "Mini Chocolate Candies", "Marshmallows"];
-
-    // Function to generate radio buttons for options
-    function generateRadioOptions(containerId, options) {
-        const container = document.getElementById(containerId);
-
-        options.forEach(option => {
-            const label = document.createElement("label");
-            label.className = "block my-2";
-
-            const radio = document.createElement("input");
-            radio.type = "radio";
-            radio.className = "form-radio";
-            radio.name = containerId;
-            radio.value = option;
-
-            const span = document.createElement("span");
-            span.className = "ml-2 text-xs sm:text-sm";
-            span.textContent = option;
-
-            label.appendChild(radio);
-            label.appendChild(span);
-
-            container.appendChild(label);
-        });
-    }
-
-    // Generate radio options for Cake Shape, Cake Flavor, and Cake Toppings
-    generateRadioOptions("cakeShapeOptions", cakeShapes);
-    generateRadioOptions("cakeFlavorOptions", cakeFlavors);
-    generateRadioOptions("cakeToppingsOptions", cakeToppings);
-</script>
 </body>
 </html>
